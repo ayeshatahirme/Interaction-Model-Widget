@@ -47,7 +47,7 @@ Widget build(BuildContext context) {
                     SizedBox(
                         height: 30,
                       ),
-                      Text('CMS Providers',
+                      Text('Touch Interactions',
                       style: TextStyle(
                         height: 3,
                         fontSize: 22,
@@ -58,10 +58,10 @@ Widget build(BuildContext context) {
                       SizedBox(
                         height: 25,
                       ),
-                      Text('Add and view first name, last name, gender, email and phone number.',
+                      Text('Absorb Pointer, Dismissible, Draggable and Drag Target.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
                         wordSpacing: 1,
                         color: Colors.white,
                         ),
