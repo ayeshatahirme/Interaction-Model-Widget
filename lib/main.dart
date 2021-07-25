@@ -139,7 +139,7 @@ Widget build(BuildContext context) {
                   leading: new Icon(Icons.drag_handle),
                   title: Text('Drag Target & Draggable'),
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DragWidgets()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DeaggableDragTargetWidget()));
                    // Navigator.pop(context);
                   }
                 ),
