@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'absorbpointer.dart';
+import 'dismissible.dart';
+import 'dragwidgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,17 +26,17 @@ Widget build(BuildContext context) {
 
 	return Scaffold(
     appBar: AppBar(
-          title: Text('Flutter Card'),
+          title: Text('Interaction Model Widgets'),
           centerTitle: true,
-          backgroundColor: Colors.blue[900],
+          backgroundColor: Colors.teal[900],
           elevation: 5,
-          shadowColor: Colors.blueGrey[300],
+          shadowColor: Colors.grey[300],
         ),
         body: Center(            
           child: Card(
-            elevation: 40,
-            shadowColor: Colors.blueGrey[300],
-            color: Colors.white,
+            elevation: 50,
+            shadowColor: Colors.grey[400],
+            color: Colors.teal[800],
             child: SizedBox(
               width: 300,
               height: 350,
@@ -41,56 +44,36 @@ Widget build(BuildContext context) {
                 padding: EdgeInsets.all(30.0),
                 child: Column(
                   children:[
-                    CircleAvatar(
-                      radius: 73.0,
-                      backgroundColor: Colors.blue[900],
-                      child: CircleAvatar(
-                        radius: 70.0,
-                        backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/48019432?v=4'),
+                    SizedBox(
+                        height: 30,
                       ),
-                    ),
-                      SizedBox(
-                        height: 25,
-                      ),
-                      Text('Scooby Doo',
+                      Text('CMS Providers',
                       style: TextStyle(
+                        height: 3,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue[900],
+                        color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Text('Add and view first name, last name, gender, email and phone number.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        wordSpacing: 1,
+                        color: Colors.white,
                         ),
                       ),
                       SizedBox(
                         height: 25,
                         ),
-                      SizedBox(
-                        width: 90,
-                        child: RaisedButton(
-                          color: Colors.blue[900],
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: Row(
-                              children: [
-                                Icon(Icons.details,
-                                color: Colors.white,
-                                ),
-                                Text('More',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  ),
-                                ),
-                              ]
-                            ),
-                            ),
-                            onPressed: (){
-                          },
-                          ),
-                      ),
-                  ],
-                ),
+                      ],
+                  ),
                 ),
               )
             ),
-            
           ),      
           drawer: Drawer(
           child: ListView(
@@ -99,11 +82,17 @@ Widget build(BuildContext context) {
                 child: Column(
                 //  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(
+                      height: 5,
+                    ),
                     CircleAvatar(
-                      radius: 50.0,
-                      backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/48019432?v=4'),
+                      radius: 35.0,
+                      backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/48019432?s=400&u=82e17c6c8b1016b1449b06df63864b00ebee21fe&v=4'),
                     ),
                     Padding(padding: EdgeInsets.all(1.0),
+                    ),
+                    SizedBox(
+                      height: 5,
                     ),
                     Text('Ayesha Tahir',
                     style: TextStyle(
@@ -111,24 +100,28 @@ Widget build(BuildContext context) {
                       fontSize: 16,
                     )
                     ),
-                    Text('ayeshatahirme@gmail.com',
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('2018-CS-22',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 14,
-                    )
+                      fontSize: 16,
+                      )
                     ),
                   ],
                 ),
                 
                 decoration: BoxDecoration(
-                  color: Colors.blue[900],
+                  color: Colors.teal[900],
                 ),
                 
                 ),
                 ListTile(
-                  leading: new Icon(Icons.control_point_rounded, color: Colors.red,),
+                  leading: new Icon(Icons.mouse),
                   title: Text('Absorb Pointer'),
                   onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AbsorbPointerWidget()));
                    // Navigator.pop(context);
                   }
                   
@@ -137,6 +130,7 @@ Widget build(BuildContext context) {
                   leading: new Icon(Icons.inbox),
                   title: Text('Dismissible'),
                   onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DismissibleWidget()));
                    // Navigator.pop(context);
                   }
                   
@@ -145,8 +139,9 @@ Widget build(BuildContext context) {
                   leading: new Icon(Icons.drag_handle),
                   title: Text('Drag Target & Draggable'),
                   onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DragWidgets()));
                    // Navigator.pop(context);
-                  }  
+                  }
                 ),
                 
             ]
