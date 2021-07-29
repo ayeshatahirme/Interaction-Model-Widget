@@ -51,7 +51,7 @@ class _DragWidgetsState extends State<DragWidgets> {
         Positioned(
           left: 150.0,
           bottom: 0.0,
-          child: DragTarget(
+          child: DragTarget(    // Drag target Widget
             onAccept: (Color color) {
               caughtColor = color;
             },
@@ -115,9 +115,9 @@ class DragBoxState extends State<DragBox> {
     return Positioned(
       left: position.dx,
       top: position.dy,
-      child: Draggable(
-        data: widget.itemColor,
-        child: Container(
+      child: Draggable(   // Draggable Widget
+        data: widget.itemColor,  // data
+        child: Container(        // child
           width: 100.0,
           height: 100.0,
           color: widget.itemColor,
@@ -132,12 +132,12 @@ class DragBoxState extends State<DragBox> {
             ),
           ),
         ),
-        onDraggableCanceled: (velocity, offset) {
+        onDraggableCanceled: (velocity, offset) {  // draggable canceled
           setState(() {
             position = offset;
           });
         },
-        feedback: Container(
+        feedback: Container(        // feedback
           width: 120.0,
           height: 120.0,
           color: widget.itemColor.withOpacity(0.5),
