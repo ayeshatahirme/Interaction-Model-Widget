@@ -19,5 +19,5 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Screenshots of app
 <p>
- <img align="left" src="img/ss.JPG" width="350">
+ <img align="left" src="img/ss.jpg" width="350">
 </p>
